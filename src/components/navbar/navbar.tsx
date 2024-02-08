@@ -19,7 +19,7 @@ export const Navbar = (props: INavbar) => {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger onClick={props.handleNote}>
-            <Plus />
+            <Plus data-testid="plus" />
           </TooltipTrigger>
           <TooltipContent>
             <p>Add Note</p>
@@ -30,7 +30,7 @@ export const Navbar = (props: INavbar) => {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger onClick={props.handleExit}>
-            <LogOut />
+            <LogOut data-testid="exit" />
           </TooltipTrigger>
           <TooltipContent>
             <p>Exit</p>
