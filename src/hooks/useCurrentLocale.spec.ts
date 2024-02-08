@@ -2,12 +2,14 @@ import { renderHook } from "@testing-library/react";
 import { useCurrentLocale } from "./useCurrentLocale";
 import * as useRouter from "next/router";
 
+const useRouterMock = vi.spyOn(useRouter, "useRouter");
+
 describe("when initialize", () => {
   describe("and the default locale is en", () => {
     it("renders the english locale", () => {
-      vi.spyOn(useRouter, "useRouter").mockReturnValue({
+      useRouterMock.mockReturnValue({
         locale: "en",
-      });
+      } as unknown as useRouter.NextRouter);
 
       const { result } = renderHook(() => useCurrentLocale());
 
@@ -17,9 +19,9 @@ describe("when initialize", () => {
 
   describe("and the default locale is pt", () => {
     it("renders the portuguese locale", () => {
-      vi.spyOn(useRouter, "useRouter").mockReturnValue({
+      useRouterMock.mockReturnValue({
         locale: "pt",
-      });
+      } as unknown as useRouter.NextRouter);
 
       const { result } = renderHook(() => useCurrentLocale());
 

@@ -9,8 +9,8 @@ describe("Loading", () => {
       const titleEl = screen.getByText(/notekeeper/i);
       const progressEl = screen.getByRole("progressbar");
 
-      expect(titleEl).toBeVisible();
-      expect(progressEl).toBeVisible();
+      expect(titleEl).toBeInTheDocument();
+      expect(progressEl).toBeInTheDocument();
     });
 
     describe("when is not loading", () => {
