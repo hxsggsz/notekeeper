@@ -3,5 +3,5 @@ import { useRouter } from "next/router";
 
 export function useCurrentLocale() {
   const { locale } = useRouter();
-  return locale === "en" ? i18n.en : i18n.pt;
+  return locale === "en-US" ? i18n.en : i18n.pt;
 }

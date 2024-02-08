@@ -8,8 +8,8 @@ const config = {
    * @see https://github.com/vercel/next.js/issues/41980
    */
   i18n: {
-    locales: ["en", "pt"],
-    defaultLocale: "en",
+    locales: ["en-US", "pt-BR"],
+    defaultLocale: "pt-BR",
   },
 };
 

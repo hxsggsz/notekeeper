@@ -8,7 +8,7 @@ describe("when initialize", () => {
   describe("and the default locale is en", () => {
     it("renders the english locale", () => {
       useRouterMock.mockReturnValue({
-        locale: "en",
+        locale: "en-US",
       } as unknown as useRouter.NextRouter);
 
       const { result } = renderHook(() => useCurrentLocale());
@@ -20,7 +20,7 @@ describe("when initialize", () => {
   describe("and the default locale is pt", () => {
     it("renders the portuguese locale", () => {
       useRouterMock.mockReturnValue({
-        locale: "pt",
+        locale: "pt-BR",
       } as unknown as useRouter.NextRouter);
 
       const { result } = renderHook(() => useCurrentLocale());

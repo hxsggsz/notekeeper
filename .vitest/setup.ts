@@ -14,5 +14,8 @@ expect.extend(matchers);
 beforeEach(() => {
   // https://github.com/vitest-dev/vitest/issues/4223
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  window.HTMLElement.prototype.scrollIntoView = vi.fn();
+  window.HTMLElement.prototype.hasPointerCapture = vi.fn();
+  window.HTMLElement.prototype.releasePointerCapture = vi.fn();
   window.scrollTo = vi.fn<any>();
 });

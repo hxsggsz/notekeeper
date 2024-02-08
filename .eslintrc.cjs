@@ -9,7 +9,7 @@ const config = {
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
   ],
   rules: {
     // These opinionated rules are enabled in stylistic-type-checked above.
@@ -26,6 +26,7 @@ const config = {
     ],
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     "@typescript-eslint/require-await": "off",
+    "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/no-misused-promises": [
       "error",
       {
