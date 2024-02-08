@@ -1,16 +1,17 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import Head from "next/head";
-import { useTranslation } from "react-i18next";
 import { api } from "@/utils/api";
+import { PageLoading } from "@/components/pageLoading/pageLoading";
+import { useCurrentLocale } from "@/hooks/useCurrentLocale";
 
 export default function Home() {
-  const { t } = useTranslation();
+  const t = useCurrentLocale();
 
   const { data: sessionData } = useSession();
 
   const renderSignIn = () => (
     <div>
-      <h1>{t("signIn")}</h1>
+      <h1>{t.signIn}</h1>
     </div>
   );
   return (
@@ -21,7 +22,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className=" dark:bg-midnight flex min-h-screen flex-col items-center justify-center bg-white">
-        {!sessionData && renderSignIn()}
+        {!sessionData ? (
+          renderSignIn()
+        ) : (
+          <PageLoading isLoading={!!sessionData} />
+        )}
       </main>
     </>
   );

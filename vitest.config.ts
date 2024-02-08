@@ -6,6 +6,7 @@ export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
     globals: true,
+    clearMocks: true,
     environment: "jsdom",
     coverage: {
       provider: "istanbul",
