@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { PageLoading } from "./pageLoading";
 
 const meta = {
-  title: "Components/Loading",
+  title: "Components/PageLoading",
   component: PageLoading,
 } satisfies Meta<typeof PageLoading>;
 
