@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -19,6 +19,14 @@ const config = {
     },
     extend: {
       colors: {
+        rose: "#FDBAA3",
+        midnight: "#3C3D43",
+        cream: "#FFFDFA",
+        lightYellow: "rgba(251, 235, 149, 0.4)",
+        redOrange: "rgba(253, 186, 163, 0.4)",
+        lilac: "rgba(182, 165, 203, 0.4)",
+        greenCyan: "rgba(151, 210, 188, 0.6)",
+        cyanLight: "rgba(174, 223, 232, 0.6)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -75,6 +83,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
