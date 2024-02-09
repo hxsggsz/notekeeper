@@ -8,8 +8,8 @@ export const i18n = {
     greetings: "Hello",
   },
   pt: {
-    signIn: "Parece que você não fez o login,",
-    signInButton: "Clique aqui e faça o login!",
+    signIn: "Parece que você não fez o login",
+    signInButton: "Clique aqui para fazer o login!",
     languageSelect: "Idioma",
     eng: "Inglês",
     portuguese: "Português",

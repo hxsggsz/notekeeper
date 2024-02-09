@@ -9,7 +9,7 @@ export const SignIn = (props: ISignIn) => {
   const t = useCurrentLocale();
 
   return (
-    <div className="align-center flex justify-center gap-2">
+    <div className="flex w-full justify-center gap-2 max-md:flex-col max-md:items-center">
       <h1>{t.signIn}</h1>
       <Button variant="link" size="link" onClick={props.handleSignIn}>
         {t.signInButton}

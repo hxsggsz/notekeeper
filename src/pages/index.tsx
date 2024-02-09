@@ -62,12 +62,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white dark:bg-zinc-800">
-        <Navbar
-          handleNote={() =>
-            mutateCreateNote({ userId, description: "", color: randomColor()! })
-          }
-          handleExit={() => signOut()}
-        />
         <div className="fixed right-4 top-4 flex items-center">
           {theme === "dark" ? (
             <Button variant="none" onClick={() => setTheme("light")}>
@@ -93,6 +87,16 @@ export default function Home() {
         ) : (
           notes.data && (
             <div className="flex flex-col items-center max-md:mt-20">
+              <Navbar
+                handleNote={() =>
+                  mutateCreateNote({
+                    userId,
+                    description: "",
+                    color: randomColor()!,
+                  })
+                }
+                handleExit={() => signOut()}
+              />
               <h1 className="mb-4 w-full text-center text-3xl font-bold max-md:text-end">
                 {t.greetings}, {sessionData.user.name} 👋
               </h1>
