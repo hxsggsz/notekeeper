@@ -31,8 +31,8 @@ export const NotesCards = (props: INotesCards) => {
   );
 
   return (
-    <div className="ml-32 flex w-[90%] gap-2 overflow-x-auto pr-8  max-md:flex-col max-md:items-center">
-      {props.notes.map((note) => (
+    <div className="flex w-screen gap-2 overflow-x-auto pl-16 pr-2  max-md:flex-col max-md:items-center">
+      {props.notes.map((note, index) => (
         <Card
           key={note.id}
           data-color={note.color}
@@ -49,7 +49,7 @@ export const NotesCards = (props: INotesCards) => {
           </CardHeader>
           <CardContent>
             <Textarea
-              autoFocus
+              autoFocus={index === 0}
               onChange={(ev) =>
                 debouncedUpdateNote(ev.currentTarget.value, note.id)
               }
