@@ -31,7 +31,7 @@ export const NotesCards = (props: INotesCards) => {
   );
 
   return (
-    <div className="ml-32 flex w-[90%] gap-2 overflow-x-auto pr-8">
+    <div className="ml-32 flex w-[90%] gap-2 overflow-x-auto pr-8  max-md:flex-col max-md:items-center">
       {props.notes.map((note) => (
         <Card
           key={note.id}

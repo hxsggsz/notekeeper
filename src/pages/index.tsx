@@ -92,9 +92,9 @@ export default function Home() {
           <SignIn handleSignIn={() => signIn("github")} />
         ) : (
           notes.data && (
-            <>
-              <h1 className="text-3xl font-bold">
-                Hello, {sessionData.user.name} 👋
+            <div className="flex flex-col items-center max-md:mt-20">
+              <h1 className="mb-4 w-full text-center text-3xl font-bold max-md:text-end">
+                {t.greetings}, {sessionData.user.name} 👋
               </h1>
               <NotesCards
                 notes={notes.data}
@@ -102,7 +102,7 @@ export default function Home() {
                 handleDelete={handleDeleteNote}
               />
               <PageLoading isLoading={notes.isLoading} />
-            </>
+            </div>
           )
         )}
       </main>

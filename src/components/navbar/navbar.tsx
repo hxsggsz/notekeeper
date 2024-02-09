@@ -1,4 +1,4 @@
-import { LogOut, Plus } from "lucide-react";
+import { LogOut, Paperclip, Plus } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -13,8 +13,8 @@ interface INavbar {
 
 export const Navbar = (props: INavbar) => {
   return (
-    <nav className="fixed left-0 top-0 flex h-svh flex-col items-center justify-between bg-cream p-2 shadow-lg dark:bg-midnight">
-      <h1 className="font-bold">Notekeeper</h1>
+    <nav className="fixed left-0 top-0 flex h-svh flex-col items-center justify-between bg-cream p-4 shadow-lg dark:bg-midnight">
+      <Paperclip />
 
       <TooltipProvider>
         <Tooltip>

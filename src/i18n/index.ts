@@ -5,6 +5,7 @@ export const i18n = {
     languageSelect: "Language",
     eng: "English",
     portuguese: "Portuguese",
+    greetings: "Hello",
   },
   pt: {
     signIn: "Parece que você não fez o login,",
@@ -12,5 +13,6 @@ export const i18n = {
     languageSelect: "Idioma",
     eng: "Inglês",
     portuguese: "Português",
+    greetings: "Olá",
   },
 };
