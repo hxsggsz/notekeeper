@@ -29,7 +29,7 @@ export const NotesRouter = createTRPCRouter({
           userId: input.userId,
         },
         orderBy: {
-          createdAt: "asc",
+          createdAt: "desc",
         },
       });
       return notes;

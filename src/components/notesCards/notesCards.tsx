@@ -14,7 +14,7 @@ interface INotesCards {
   handleDelete: (noteId: string) => void;
 }
 
-interface INotes {
+export interface INotes {
   id: string;
   description: string;
   createdAt: Date;
