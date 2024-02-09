@@ -36,7 +36,7 @@ export const NotesCards = (props: INotesCards) => {
         <Card
           key={note.id}
           data-color={note.color}
-          className="data-[color=redorange]:bg-redorange data-[color=lightyellow]:bg-lightyellow data-[color=greencyan]:bg-greencyan data-[color=cyanlight]:bg-cyanlight data-[color=lilac]:bg-lilac"
+          className="data-[color=cyanlight]:bg-cyanlight data-[color=greencyan]:bg-greencyan data-[color=lightyellow]:bg-lightyellow data-[color=lilac]:bg-lilac data-[color=redorange]:bg-redorange"
         >
           <CardHeader>
             <Button
@@ -49,6 +49,7 @@ export const NotesCards = (props: INotesCards) => {
           </CardHeader>
           <CardContent>
             <Textarea
+              autoFocus
               onChange={(ev) =>
                 debouncedUpdateNote(ev.currentTarget.value, note.id)
               }
