@@ -14,7 +14,7 @@ interface INavbar {
 export const Navbar = (props: INavbar) => {
   return (
     <nav className="fixed left-0 top-0 flex h-svh flex-col items-center justify-between bg-cream p-4 shadow-lg dark:bg-midnight">
-      <Paperclip />
+      <Paperclip data-testid="notekeeper" />
 
       <TooltipProvider>
         <Tooltip>

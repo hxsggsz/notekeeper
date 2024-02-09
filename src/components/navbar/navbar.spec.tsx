@@ -7,7 +7,7 @@ describe("navbar", () => {
   describe("when initialize", () => {
     it("renders correctly", () => {
       render(<Navbar handleNote={() => {}} handleExit={() => {}} />);
-      const navbarEl = screen.getByText(/notekeeper/i);
+      const navbarEl = screen.getByTestId(/notekeeper/i);
       expect(navbarEl).toBeInTheDocument();
     });
   });

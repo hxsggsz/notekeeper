@@ -25,7 +25,7 @@ describe("when initialize", () => {
 
       const { result } = renderHook(() => useCurrentLocale());
 
-      expect(result.current.signIn).toBe("Parece que você não fez o login,");
+      expect(result.current.signIn).toBe("Parece que você não fez o login");
       vi.clearAllMocks();
     });
   });
