@@ -13,7 +13,7 @@ interface INavbar {
 
 export const Navbar = (props: INavbar) => {
   return (
-    <nav className="fixed left-0 top-0 flex h-svh flex-col items-center justify-between bg-cream p-2 shadow-lg">
+    <nav className="fixed left-0 top-0 flex h-svh flex-col items-center justify-between bg-cream p-2 shadow-lg dark:bg-midnight">
       <h1 className="font-bold">Notekeeper</h1>
 
       <TooltipProvider>

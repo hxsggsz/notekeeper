@@ -1,9 +1,3 @@
-import { signIn, signOut, useSession } from "next-auth/react";
-import Head from "next/head";
-import { api } from "@/utils/api";
-import { PageLoading } from "@/components/pageLoading/pageLoading";
-import { useCurrentLocale } from "@/hooks/useCurrentLocale";
-import { SignIn } from "@/components/signin/signin";
 import {
   Select,
   SelectContent,
@@ -11,12 +5,23 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useRouter } from "next/router";
 import { Navbar } from "@/components/navbar/navbar";
 import { NotesCards } from "@/components/notesCards/notesCards";
+import { PageLoading } from "@/components/pageLoading/pageLoading";
+import { SignIn } from "@/components/signin/signin";
+import { useCurrentLocale } from "@/hooks/useCurrentLocale";
+import { api } from "@/utils/api";
 import { randomColor } from "@/utils/randomColor";
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useTheme } from "next-themes";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { Button } from "@/components/ui/button";
+import { Sun, SunMoon } from "lucide-react";
 
 export default function Home() {
+  const { theme, setTheme } = useTheme();
+
   const { push } = useRouter();
 
   const t = useCurrentLocale();
@@ -56,14 +61,23 @@ export default function Home() {
         <meta name="description" content="a way to keep your notes" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=" flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white dark:bg-midnight">
+      <main className="flex min-h-screen flex-col items-center justify-center overflow-hidden bg-white dark:bg-zinc-800">
         <Navbar
           handleNote={() =>
             mutateCreateNote({ userId, description: "", color: randomColor()! })
           }
           handleExit={() => signOut()}
         />
-        <div className="fixed right-4 top-4">
+        <div className="fixed right-4 top-4 flex items-center">
+          {theme === "dark" ? (
+            <Button variant="none" onClick={() => setTheme("light")}>
+              <Sun />
+            </Button>
+          ) : (
+            <Button variant="none" onClick={() => setTheme("dark")}>
+              <SunMoon />
+            </Button>
+          )}
           <Select onValueChange={(value) => push("/", "/", { locale: value })}>
             <SelectTrigger>
               <SelectValue placeholder={t.languageSelect} />
